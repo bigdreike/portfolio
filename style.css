@@ -1,0 +1,611 @@
+/*
+Plugin: jQuery Parallax
+Version 1.1.3
+Author: Ian Lunn
+Twitter: @IanLunn
+Author URL: http://www.ianlunn.co.uk/
+Plugin URL: http://www.ianlunn.co.uk/plugins/jquery-parallax/
+
+License: http://creativecommons.org/licenses/by-sa/3.0/ (Attribution Share Alike). Please attribute work to Ian Lunn simply by leaving these comments in the source code or if you'd prefer, place a link on your website to http://www.ianlunn.co.uk/.
+*/
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	-webkit-font-smoothing: antialiased;
+	font-family: 'Playfair Display', serif;
+}
+
+figure {
+	display: block;
+	margin: 0;
+	padding:0;
+}
+
+* {
+  box-sizing border-box;
+  	margin: 0; 
+	padding: 0;	
+}
+
+.wrapper_web {
+	width:100%;
+	min-height:100%;
+	display:block;
+}
+
+a, a:visited{
+	text-decoration: none;
+	color: #696969;	
+}
+
+p{
+	margin: 0 0 20px 0;	
+}
+
+p, ul{
+	font-size-adjust:0.488;
+}
+
+img{
+	border: 0;
+}
+
+p{
+	margin-top:40px;	
+}
+
+h1{
+	font-size:44px;
+	line-height:45px;
+	color: #ffffff;
+	font-weight: 700; 
+	font-family: 'Playfair Display', serif;
+}
+
+h2{
+	font-size-adjust:0.531;
+	font-weight:normal;
+	text-transform: Uppercase;
+	font-size:0.9em;
+	line-height:30px;
+}
+
+h3{
+	font-size-adjust:0.531;
+	font-weight:normal;
+	text-transform: Uppercase;
+	font-size:1.4em;
+	letter-spacing:1px;
+	font-style: Italic;
+	line-height:30px;
+}
+
+div#top {
+	background: linear-gradient(rgba(255,255,255,0),rgba(255,255,255,0)), url(images/bg.jpg); 
+	position: relative; 
+	background-repeat: no-repeat; 
+	background-size: cover; 
+	width: 100%; 
+	height: 790px; 
+	overflow-y: scroll; 
+}
+
+img#top { 
+	width: 100%; 
+}
+
+.center{
+	text-align: center;
+}
+
+#menu{
+	width: 100%;
+	height: 106px;
+	background:#fff;
+	position: fixed;
+	top: 0;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	font-size: 11px;
+	color: #292929;
+	font-weight: 400;
+	z-index: 10000;
+	line-height: 106px;
+}
+
+#menu_logo{
+	margin-left: 25px;
+	float: left;
+	z-index: 50;
+	position: absolute;
+}
+
+#menu_logo img{
+	width:50%;
+	height:50%;
+}
+
+#logo img{
+	width:100%;
+	height:100%;
+	max-width: 460px;
+}
+
+#logo{
+	width:300px;
+	margin: auto;
+}
+
+#menu_stuff a{
+	margin: 0 25px 0 25px;
+	text-decoration: none;
+	color: #696969;
+	width: 100%;
+	z-index: 10000;
+	text-align: center;
+}	
+
+#menu_stuff a:hover{
+	margin: 0 25px 0 25px;
+	text-decoration: none;
+	color: #292929;
+}	
+
+
+#menu_stuff{
+	height: 106px;
+	width:100%;
+	margin:auto;
+	position: absolute;
+	z-index: 9000;
+	text-align: center;
+
+}
+
+#menu img{
+	vertical-align: middle;
+}
+
+#intro{
+	height:700px;
+	padding-top:100px;
+	position: relative;	
+}
+
+.box{
+	width:50%;
+	float: left;
+	color: #FFFFFF;
+	line-height:20px;
+	background: #ffffff;
+	height: 600px;
+}
+
+.work{
+	width:33.33333333%;
+	height: 498px;
+	float: left;
+	color: #FFFFFF;
+	line-height:20px;
+}
+
+.work2{
+	width:40%;
+	height: 498px;
+	float: left;
+	color: #FFFFFF;
+	line-height:20px;
+}
+
+.story {
+	width: 500px;
+	height: auto;
+	margin: auto;
+	position: absolute;
+	top: 300px; left: 0; bottom: 0; right: 0;
+	text-align: center;
+	vertical-align: middle;
+  	text-align: center;
+
+}
+
+.story2 .text {
+	margin: 0 auto;
+	overflow: hidden;
+	width: 100%;
+	height: 298px;
+	position: relative;
+	z-index: 300;
+	font-size: 13px;
+	line-height:35px;
+	letter-spacing: 1px;
+	color: #494949;
+	background: #ffffff;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	text-align: left;
+}
+
+#margin {
+	width:60%;
+	min-width: 300px;
+	margin:auto;
+}
+
+.story2 .text h1{
+	color: #292929;
+}
+
+.councl{
+	background: url('images/councl.jpg');
+	background-position: bottom center;
+	background-size: cover;
+}
+
+
+.gul {
+	background: url('images/gulbla.jpg');
+	background-size: cover;
+}
+
+.zound {
+	background: url('images/zound.jpg');
+	background-size: cover;
+}
+
+.sun {
+	background: url('images/sunpocket.jpg');
+	background-size: cover;
+}
+
+.boom {
+	background: url('images/boomerang.jpg');
+	background-size: cover;
+}
+
+.img {
+	float: left;
+}
+.logos {
+	width: 1046px;
+	margin: auto;
+}
+
+.tweet {
+	background: #ffffff;
+	font-family: 'Playfair Display', serif;
+	font-weight: 700;
+	font-size: 47px;
+	text-align: center;
+	color: #100f0f;
+	float: left;
+	width:66.666%;
+	height: 298px;
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+#twitter_id {
+	color: #8f8f8f;
+	font-size:14px;
+	text-transform: uppercase;
+	line-height: 70px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	letter-spacing: 2px;
+}
+#intro {
+	background:url(images/bg.jpg) center center no-repeat fixed;
+	background-size: cover;
+	color: white;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.companies { 
+	background: #262626;
+	height: 315px;
+	line-height: 315px;
+	width:100%;
+	clear: both;
+}
+
+.companies img{ 
+	margin:0 25px 0 25px;
+	vertical-align: middle;
+}
+
+.left{
+	text-align: left;
+	left:30px;
+	height:80px;
+	line-height:80px;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	position: absolute;
+}
+
+.footer{
+	height:80px;
+	background:#161616;
+	color: #ffffff;	
+}
+
+#tweets ul{
+	list-style: none;
+	margin: 0 40px 0 40px;
+}
+
+#tweets ul a{
+	color: #696969;
+	text-decoration: none;
+}
+
+#tweets ul a:hover{
+	color: #494949;
+	text-decoration: none;
+}
+
+.blurImg {
+  position: relative;
+  width: 100%;
+  height: 790px;
+  z-index: -1;
+  top: 0;
+  left: 0;
+ }
+
+.img-src { 
+    position: fixed;
+    height: 790px;
+    background-position: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+.container {
+  height: 1300px;
+  background :white;
+  z-index :1;
+ }
+
+figure {
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	cursor: pointer;
+}
+ 
+figcaption {
+	background: rgba(0,0,0,0.9);
+	color: white;
+	display: table;
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 100;
+	letter-spacing: 1px;
+	line-height: 2.4em;
+	padding: 50px;
+	font-size: 0.9em;
+		-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+figcaption h1{
+	margin:10px;
+}	
+ 
+figcaption p {
+	display: table-cell;
+	font-size: 0.9em;
+	position: relative;
+	width: 500px;
+	vertical-align: middle;
+}
+
+figure:hover figcaption {
+	opacity: 1;
+}
+
+/************************************************************************************
+smaller than 1100
+*************************************************************************************/
+
+@media screen and (max-width: 1100px) {
+
+.story2 .text {
+width: 100%;
+height: auto;
+padding-top:100px;
+padding-bottom: 100px;
+}
+
+.councl {
+	height: 700px;
+}
+
+.box{
+	height: 700px;
+}
+
+.companies img {
+	margin: 0 10px 0 25px;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 30px;
+}
+
+h1 {
+font-size: 23px;
+}
+
+}	
+
+/************************************************************************************
+smaller than 960
+*************************************************************************************/
+
+@media screen and (max-width: 959px) {
+
+.work{
+	width:50%;
+	height: 498px;
+	float: left;
+}
+
+.box{
+	width:100%;
+	float: none;
+	height: 498px;
+}
+
+.tweet {
+	float: none;
+	width:100%;
+	height: 298px;
+	clear:both;
+	font-size: 40px;
+
+}
+
+.companies img{ 
+	margin:0;
+	vertical-align: middle;
+
+}
+
+.companies { 
+	height: 100%;
+	clear: both;
+}
+
+.story2 .text {
+	text-align: center;
+}
+
+.story #logo img{
+	width:60%;
+	height:60%;
+}
+
+.story{
+	width:auto;
+	top: 300px;
+}
+
+#logo {
+	width: 300px;
+}
+
+.logos {
+	width: 100%;
+	margin: auto;
+}
+
+.img {
+	float: none;
+	width: 100%
+	text-align:100%;
+}
+
+.companies {
+	height: auto;
+	line-height: 110px;
+	text-align: center;
+	padding-top: 50px;
+}
+
+figccaption {
+	padding: 20px;
+}
+
+h1 {
+	line-height: 25px;
+}
+
+}
+
+/************************************************************************************
+smaller than 640
+*************************************************************************************/
+
+@media screen and (max-width: 640px) {
+	
+.tweet {
+	float: none;
+	width:100%;
+	height: 298px;
+	clear:both;
+	font-size: 21px;
+	line-height: 31px;
+}
+.blurImg {
+	height: 640px;
+}
+
+.story {
+	height: 300px;
+}
+
+.work {
+	width:100%;
+	height: 400px;
+	float: left;
+}
+
+.story{
+	width:auto;
+	top: 200px;
+}
+
+#tweets ul {
+	list-style: none;
+	text-align: center;
+	padding: 0;
+	margin-top: 20px;
+
+}
+
+.story2 .text {
+	height: 500px;
+	clear: both;
+}
+
+.councl{
+	background-position: center center;
+	height: 300px !important;
+}
+
+.box{
+	height: auto;
+}
+
+img#top {
+	height:600px;
+}
+
+.left {
+	font-size: 10px;
+}
+
+}
